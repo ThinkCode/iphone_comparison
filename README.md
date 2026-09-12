@@ -13,6 +13,31 @@ straight answer on whether the iPhone 18 Pro Max is worth it.
 
 Deep links work: `index.html#15` opens straight to the iPhone 15 Pro Max verdict.
 
+## Order links
+
+Each verdict links out to Apple and to Amazon. Set your Amazon Associates
+tracking ID in the `AMAZON_TAG` constant at the top of the `<script>` block in
+`index.html`:
+
+```js
+const AMAZON_TAG = "yourtag-20";
+```
+
+Left empty, the Amazon links still work — they just aren't attributed. The
+affiliate disclosure required by the Associates Operating Agreement is rendered
+under the buttons.
+
+## Deploying
+
+Served by GitHub Pages at **iphonecomparison.pricesearchr.com**. `CNAME` in the
+repo root holds the custom domain; the DNS `CNAME` record for
+`iphonecomparison` points at `thinkcode.github.io`.
+
+GitHub Pages must be enabled in **Settings → Pages**, serving from the default
+branch, and this content must be merged to that branch. Pages on a private
+repository requires a paid GitHub plan; on the free plan the repo has to be
+public for the site to serve.
+
 ## Running it
 
 Open `index.html`. That's it — no build, no dependencies, no network calls.

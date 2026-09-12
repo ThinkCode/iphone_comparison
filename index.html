@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Should I Upgrade? iPhone 18 Pro Max</title>
 <meta name="description" content="Pick your current iPhone and see exactly what the iPhone 18 Pro Max changes — battery, camera, zoom, speed.">
+<link rel="canonical" href="https://iphonecomparison.pricesearchr.com/">
+<meta property="og:url" content="https://iphonecomparison.pricesearchr.com/">
 <meta property="og:title" content="Should you upgrade to the iPhone 18 Pro Max?">
 <meta property="og:description" content="Pick your phone. Get a straight answer in 3 seconds.">
 <meta name="twitter:card" content="summary_large_image">
@@ -144,6 +146,25 @@
   .delta strong{display:block;font-size:1.18rem;font-weight:700;letter-spacing:-.02em}
   .delta span{color:var(--dim);font-size:.83rem;line-height:1.4;display:block;margin-top:3px}
 
+  /* buy */
+  .buy{margin-top:24px}
+  .buyhead{font-size:.83rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+  .buylinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+  a.store{
+    display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg);
+    background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:16px;padding:14px 16px;
+    transition:transform .2s cubic-bezier(.2,.8,.3,1),border-color .2s,background .2s;
+  }
+  a.store:hover{transform:translateY(-2px);background:rgba(255,255,255,.085);border-color:rgba(255,255,255,.28)}
+  a.store:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+  a.store svg{flex:0 0 auto;opacity:.9}
+  a.store .slabel{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+  a.store .slabel b{font-size:.98rem;font-weight:650}
+  a.store .slabel span{font-size:.78rem;color:var(--dim)}
+  a.store .arrow{margin-left:auto;color:var(--dim);transition:transform .2s}
+  a.store:hover .arrow{transform:translateX(3px)}
+  .disclosure{font-size:.74rem;color:#6a6a73;margin-top:11px;line-height:1.5}
+
   /* actions */
   .actions{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
   button.act{
@@ -237,7 +258,24 @@
 
     <div class="deltas reveal" id="deltas" style="animation-delay:.34s"></div>
 
-    <div class="actions reveal" style="animation-delay:.42s">
+    <div class="buy reveal" style="animation-delay:.42s">
+      <div class="buyhead" id="buyhead">Ready to upgrade?</div>
+      <div class="buylinks">
+        <a class="store" id="appleLink" href="https://www.apple.com/shop/buy-iphone/" target="_blank" rel="noopener">
+          <svg width="20" height="24" viewBox="0 0 17 21" fill="currentColor" aria-hidden="true"><path d="M14.1 11.2c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9s-1.9-.9-3.1-.8c-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.5.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.1.8c1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.5-1-2.6-3.9zM11.8 3.9c.7-.8 1.1-1.9 1-3-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.5z"/></svg>
+          <span class="slabel"><b>Buy at Apple</b><span id="appleSub">iPhone 18 Pro Max · from $1,299</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="store" id="amzLink" href="#" target="_blank" rel="sponsored noopener">
+          <svg width="22" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.7 12.6c0 1-.1 1.9-.6 2.7-.4.7-1 1.1-1.7 1.1-1 0-1.5-.7-1.5-1.8 0-2.2 1.9-2.6 3.8-2.6v.6zm2.7 6.4c-.2.2-.4.2-.7.1-1-.8-1.1-1.2-1.7-2-1.6 1.6-2.7 2.1-4.7 2.1-2.4 0-4.3-1.5-4.3-4.4 0-2.3 1.2-3.9 3-4.6 1.5-.7 3.7-.8 5.4-1v-.4c0-.6.1-1.4-.3-2-.3-.5-1-.7-1.6-.7-1.1 0-2 .5-2.3 1.7-.1.3-.2.5-.5.6l-2.8-.3c-.2-.1-.5-.3-.4-.6C7 3.2 9.9 2.3 12.5 2.3c1.3 0 3.1.4 4.1 1.4 1.3 1.3 1.2 3 1.2 4.8v4.4c0 1.3.5 1.9 1 2.6.2.3.2.6 0 .7-.6.5-1.6 1.3-2.1 1.8zM21.8 19.4c-2.7 2-6.6 3.1-10 3.1-4.7 0-8.9-1.7-12.1-4.6-.3-.2 0-.6.3-.4 3.5 2 7.7 3.2 12.1 3.2 3 0 6.3-.6 9.3-1.9.5-.2.9.3.4.6zm1.1-1.3c-.3-.4-2.3-.2-3.2-.1-.3 0-.3-.2-.1-.4 1.6-1.1 4.2-.8 4.5-.4.3.4-.1 3-1.6 4.2-.2.2-.4.1-.4-.2.4-.9 1.1-2.8.8-3.1z"/></svg>
+          <span class="slabel"><b>Check price on Amazon</b><span>Often below MSRP · unlocked</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="disclosure">As an Amazon Associate we earn from qualifying purchases. Apple links are unaffiliated. Prices and availability are set by the retailer.</p>
+    </div>
+
+    <div class="actions reveal" style="animation-delay:.5s">
       <button class="act primary" id="shareBtn">Share this glow-up</button>
       <button class="act ghost" id="copyBtn">Copy link</button>
     </div>
@@ -251,6 +289,21 @@
 </footer>
 
 <script>
+/* ---------------------------------------------------------------
+   Amazon Associates tag. Set this to your own tracking ID (e.g.
+   "pricesearchr-20") to earn commission. Left empty the links still
+   work — they just don't attribute the sale to anyone.
+   --------------------------------------------------------------- */
+const AMAZON_TAG = "";
+const APPLE_URL  = "https://www.apple.com/shop/buy-iphone/";
+
+function amazonUrl(query){
+  const u = new URL("https://www.amazon.com/s");
+  u.searchParams.set("k", query);
+  if (AMAZON_TAG) u.searchParams.set("tag", AMAZON_TAG);
+  return u.toString();
+}
+
 /* Pro Max figures per generation. battery = hours of video playback. */
 const PHONES = {
   12:{name:"iPhone 12 Pro Max",yr:"2020",batt:20,zoom:2.5,ap:"ƒ/2.2",score:97,
@@ -353,6 +406,13 @@ function select(k){
   $('apNow').textContent=p.ap;
   [...bladesG.children].forEach((b,i)=>{b.style.transform=`rotate(${i*45}deg)`;});
   setTimeout(()=>{[...bladesG.children].forEach((b,i)=>{b.style.transform=`rotate(${i*45+34}deg)`;});},420);
+
+  $('appleLink').href = APPLE_URL;
+  $('amzLink').href   = amazonUrl("iPhone 18 Pro Max");
+  $('buyhead').textContent =
+    p.score>=70 ? "Ready to upgrade?" :
+    p.score>=45 ? "If the camera sold you" :
+                  "Still want one anyway?";
 
   $('deltas').innerHTML=p.deltas.map(([big,small])=>
     `<div class="delta"><strong>${big}</strong><span>${small}</span></div>`).join('');
