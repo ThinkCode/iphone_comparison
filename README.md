@@ -15,15 +15,9 @@ Deep links work: `index.html#15` opens straight to the iPhone 15 Pro Max verdict
 
 ## Order links
 
-Each verdict links out to Apple and to Amazon. Set your Amazon Associates
-tracking ID in the `AMAZON_TAG` constant at the top of the `<script>` block in
-`index.html`:
-
-```js
-const AMAZON_TAG = "yourtag-20";
-```
-
-Left empty, the Amazon links still work — they just aren't attributed. The
+Each verdict links out to Apple and to Amazon. The Amazon Associates tracking
+ID lives in the `AMAZON_TAG` constant at the top of the `<script>` block in
+`index.html`, currently `amznbargain-20`. The
 affiliate disclosure required by the Associates Operating Agreement is rendered
 under the buttons.
 
