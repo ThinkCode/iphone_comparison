@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Should I Upgrade? iPhone 18 Pro Max</title>
+<meta name="description" content="Pick your current iPhone and see exactly what the iPhone 18 Pro Max changes — battery, camera, zoom, speed.">
+<link rel="canonical" href="https://iphonecomparison.pricesearchr.com/">
+<meta property="og:url" content="https://iphonecomparison.pricesearchr.com/">
+<meta property="og:title" content="Should you upgrade to the iPhone 18 Pro Max?">
+<meta property="og:description" content="Pick your phone. Get a straight answer in 3 seconds.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --bg:#08080b;
+    --card:rgba(255,255,255,.055);
+    --line:rgba(255,255,255,.10);
+    --fg:#f5f5f7;
+    --dim:#8b8b93;
+    --go:#30d158;
+    --mid:#ffd426;
+    --hold:#ff6b5e;
+    --glow:#7c5cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+    background:var(--bg);color:var(--fg);min-height:100vh;
+    padding:clamp(28px,6vw,64px) 16px 64px;
+    display:flex;flex-direction:column;align-items:center;
+    overflow-x:hidden;
+  }
+  /* ---- ambient background ---- */
+  .aurora{position:fixed;inset:-30vh -30vw;z-index:-1;filter:blur(90px);opacity:.5;pointer-events:none}
+  .aurora i{position:absolute;display:block;border-radius:50%;mix-blend-mode:screen;animation:drift 18s ease-in-out infinite}
+  .aurora i:nth-child(1){width:52vw;height:52vw;left:4%;top:2%;background:#7c5cff;animation-delay:-2s}
+  .aurora i:nth-child(2){width:44vw;height:44vw;right:2%;top:16%;background:#ff7a3d;animation-delay:-7s}
+  .aurora i:nth-child(3){width:40vw;height:40vw;left:26%;bottom:2%;background:#00b3ff;animation-delay:-12s}
+  @keyframes drift{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(6%,-5%,0) scale(1.12)}66%{transform:translate3d(-5%,6%,0) scale(.92)}}
+
+  /* ---- header ---- */
+  header{text-align:center;max-width:620px;animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--dim);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;background:var(--card);margin-bottom:18px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--go);box-shadow:0 0 0 0 rgba(48,209,88,.6);animation:pulse 2.2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(48,209,88,0)}100%{box-shadow:0 0 0 0 rgba(48,209,88,0)}}
+  h1{font-size:clamp(2.1rem,7vw,3.4rem);font-weight:700;letter-spacing:-.035em;line-height:1.04}
+  h1 .grad{
+    background:linear-gradient(92deg,#fff 0%,#b9a6ff 45%,#ff9c6b 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    background-size:200% 100%;animation:shimmer 7s linear infinite;
+  }
+  @keyframes shimmer{to{background-position:200% 0}}
+  .sub{color:var(--dim);margin-top:14px;font-size:clamp(.98rem,2.6vw,1.1rem);line-height:1.5}
+
+  /* ---- picker ---- */
+  .picker{margin-top:34px;width:100%;max-width:620px;animation:rise .7s .08s cubic-bezier(.2,.7,.3,1) both}
+  .picker .label{font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);text-align:center;margin-bottom:14px}
+  .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:10px}
+  .chip{
+    background:var(--card);border:1px solid var(--line);color:var(--fg);
+    border-radius:16px;padding:14px 8px;cursor:pointer;font:inherit;
+    display:flex;flex-direction:column;align-items:center;gap:7px;
+    transition:transform .22s cubic-bezier(.2,.8,.3,1),border-color .22s,background .22s,box-shadow .22s;
+  }
+  .chip:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.09)}
+  .chip:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+  .chip .num{font-size:1.35rem;font-weight:700;letter-spacing:-.02em}
+  .chip .yr{font-size:.7rem;color:var(--dim)}
+  .chip[aria-pressed="true"]{
+    background:linear-gradient(160deg,rgba(124,92,255,.28),rgba(124,92,255,.08));
+    border-color:rgba(155,130,255,.7);box-shadow:0 10px 34px -12px rgba(124,92,255,.8);transform:translateY(-3px);
+  }
+  .glyph{width:16px;height:26px;border:1.6px solid currentColor;border-radius:4px;opacity:.65;position:relative}
+  .glyph::after{content:"";position:absolute;top:1.6px;left:50%;transform:translateX(-50%);width:7px;height:2.4px;border-radius:0 0 3px 3px;background:currentColor}
+
+  /* ---- result ---- */
+  #result{width:100%;max-width:620px;margin-top:36px}
+  #result[hidden]{display:none}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:26px;
+    padding:clamp(22px,5vw,32px);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+    box-shadow:0 30px 80px -40px rgba(0,0,0,.9);
+  }
+  .reveal{opacity:0;transform:translateY(18px);animation:rise .62s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* verdict */
+  .verdict{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .ring{position:relative;flex:0 0 auto;width:104px;height:104px}
+  .ring svg{transform:rotate(-90deg)}
+  .ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+  .ring .track{stroke:rgba(255,255,255,.10)}
+  .ring .bar{stroke:var(--vc,var(--go));transition:stroke-dashoffset 1.1s cubic-bezier(.2,.8,.25,1),stroke .4s}
+  .ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:1.55rem;font-weight:700;letter-spacing:-.03em}
+  .vtext{flex:1 1 200px;min-width:180px}
+  .vtag{font-size:1.45rem;font-weight:700;letter-spacing:-.02em;color:var(--vc,var(--go))}
+  .vline{color:var(--dim);margin-top:6px;font-size:.97rem;line-height:1.45}
+
+  hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+  /* metric rows */
+  .metric{margin-bottom:22px}
+  .metric:last-child{margin-bottom:0}
+  .mhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:9px}
+  .mname{font-size:.83rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+  .mval{font-size:1.55rem;font-weight:700;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+  .mval small{font-size:.95rem;font-weight:600;color:var(--dim);margin-left:4px}
+  .bar{height:9px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden;position:relative}
+  .bar i{
+    display:block;height:100%;border-radius:99px;width:0;
+    background:linear-gradient(90deg,#7c5cff,#00c8ff);
+    transition:width 1.15s cubic-bezier(.2,.8,.25,1);
+  }
+  .bar i.now{background:linear-gradient(90deg,#3a3a44,#5a5a66)}
+  .blabels{display:flex;justify-content:space-between;font-size:.76rem;color:var(--dim);margin-top:6px}
+  .bar+.bar{margin-top:7px}
+
+  /* zoom visual */
+  .zoom{display:flex;align-items:center;gap:12px;margin-top:4px}
+  .zbox{aspect-ratio:16/7;border-radius:12px;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(140deg,#1b1b24,#101016)}
+  .zwrap{flex:1;min-width:0}
+  .zwrap span{display:block;font-size:.72rem;color:var(--dim);margin-top:6px;text-align:center}
+  .zbox{width:100%}
+  .zbox em{
+    position:absolute;top:50%;left:50%;width:26%;aspect-ratio:1;margin:-13% 0 0 -13%;
+    border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffb36b,#c2410c 60%,#7c2d12);
+    transform:scale(var(--z,1));transition:transform 1.1s cubic-bezier(.2,.8,.25,1);
+  }
+  .zarrow{color:var(--dim);font-size:1.1rem}
+
+  /* aperture */
+  .aperture{display:flex;align-items:center;gap:16px;margin-top:4px}
+  .aperture svg{flex:0 0 auto}
+  .aperture .blade{transform-origin:60px 60px;transition:transform 1s cubic-bezier(.2,.8,.25,1)}
+  .apinfo{font-size:.92rem;color:var(--dim);line-height:1.5}
+  .apinfo b{color:var(--fg);display:block;font-size:1.05rem;margin-bottom:3px}
+
+  /* deltas */
+  .deltas{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+  .delta{background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:16px;padding:14px}
+  .delta strong{display:block;font-size:1.18rem;font-weight:700;letter-spacing:-.02em}
+  .delta span{color:var(--dim);font-size:.83rem;line-height:1.4;display:block;margin-top:3px}
+
+  /* buy */
+  .buy{margin-top:24px}
+  .buyhead{font-size:.83rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+  .buylinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+  a.store{
+    display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg);
+    background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:16px;padding:14px 16px;
+    transition:transform .2s cubic-bezier(.2,.8,.3,1),border-color .2s,background .2s;
+  }
+  a.store:hover{transform:translateY(-2px);background:rgba(255,255,255,.085);border-color:rgba(255,255,255,.28)}
+  a.store:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+  a.store svg{flex:0 0 auto;opacity:.9}
+  a.store .slabel{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+  a.store .slabel b{font-size:.98rem;font-weight:650}
+  a.store .slabel span{font-size:.78rem;color:var(--dim)}
+  a.store .arrow{margin-left:auto;color:var(--dim);transition:transform .2s}
+  a.store:hover .arrow{transform:translateX(3px)}
+  .disclosure{font-size:.74rem;color:#6a6a73;margin-top:11px;line-height:1.5}
+
+  /* actions */
+  .actions{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+  button.act{
+    flex:1 1 150px;border:none;border-radius:999px;padding:15px 18px;font:inherit;
+    font-weight:650;cursor:pointer;transition:transform .18s,opacity .18s,background .18s;
+  }
+  button.act:active{transform:scale(.97)}
+  .primary{background:var(--fg);color:#0a0a0c}
+  .primary:hover{opacity:.88}
+  .ghost{background:transparent;color:var(--fg);border:1px solid rgba(255,255,255,.22)}
+  .ghost:hover{background:rgba(255,255,255,.07)}
+
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,24px);
+    background:#fff;color:#0a0a0c;padding:12px 20px;border-radius:999px;font-weight:600;font-size:.9rem;
+    opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:9;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  footer{margin-top:52px;color:#55555e;font-size:.78rem;text-align:center;line-height:1.6;max-width:520px}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header>
+  <div class="eyebrow"><span class="dot"></span> iPhone 18 Pro Max · Sept 2026</div>
+  <h1>Should you <span class="grad">actually</span> upgrade?</h1>
+  <p class="sub">Tap the iPhone in your pocket. Get a straight answer in three seconds — no spec sheet required.</p>
+</header>
+
+<section class="picker">
+  <div class="label" id="pickLabel">Your current iPhone</div>
+  <div class="chips" role="group" aria-labelledby="pickLabel" id="chips"></div>
+</section>
+
+<section id="result" hidden aria-live="polite">
+  <div class="card">
+    <div class="verdict reveal" style="animation-delay:.02s">
+      <div class="ring">
+        <svg width="104" height="104" viewBox="0 0 104 104" aria-hidden="true">
+          <circle class="track" cx="52" cy="52" r="45"></circle>
+          <circle class="bar" id="ringBar" cx="52" cy="52" r="45" stroke-dasharray="283" stroke-dashoffset="283"></circle>
+        </svg>
+        <b id="ringNum">0</b>
+      </div>
+      <div class="vtext">
+        <div class="vtag" id="vtag"></div>
+        <div class="vline" id="vline"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="metric reveal" style="animation-delay:.1s">
+      <div class="mhead"><span class="mname">Battery · video playback</span><span class="mval" id="battVal">0<small>hrs</small></span></div>
+      <div class="bar"><i class="now" id="battNow"></i></div>
+      <div class="bar"><i id="batt18"></i></div>
+      <div class="blabels"><span id="battLblNow"></span><span>iPhone 18 Pro Max · 45h</span></div>
+    </div>
+
+    <div class="metric reveal" style="animation-delay:.18s">
+      <div class="mhead"><span class="mname">Optical zoom reach</span><span class="mval" id="zoomVal">8×</span></div>
+      <div class="zoom">
+        <div class="zwrap"><div class="zbox"><em id="zNow"></em></div><span id="zNowLbl"></span></div>
+        <div class="zarrow" aria-hidden="true">→</div>
+        <div class="zwrap"><div class="zbox"><em id="z18"></em></div><span>8× &middot; 18 Pro Max</span></div>
+      </div>
+    </div>
+
+    <div class="metric reveal" style="animation-delay:.26s">
+      <div class="mhead"><span class="mname">Main camera aperture</span><span class="mval">ƒ/1.48–4.0</span></div>
+      <div class="aperture">
+        <svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="50" fill="#0d0d12" stroke="rgba(255,255,255,.14)"/>
+          <g id="blades" fill="#2a2a35" stroke="rgba(255,255,255,.1)" stroke-width="1"></g>
+          <circle cx="60" cy="60" r="15" fill="url(#lens)"/>
+          <defs><radialGradient id="lens" cx="35%" cy="30%">
+            <stop offset="0%" stop-color="#9fd8ff"/><stop offset="60%" stop-color="#2b5fa8"/><stop offset="100%" stop-color="#0c1a33"/>
+          </radialGradient></defs>
+        </svg>
+        <div class="apinfo"><b>First variable aperture on iPhone</b>The lens physically opens and closes — brighter night shots, real optical depth of field. Yours is fixed at <span id="apNow">ƒ/1.78</span>.</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="deltas reveal" id="deltas" style="animation-delay:.34s"></div>
+
+    <div class="buy reveal" style="animation-delay:.42s">
+      <div class="buyhead" id="buyhead">Ready to upgrade?</div>
+      <div class="buylinks">
+        <a class="store" id="appleLink" href="https://www.apple.com/shop/buy-iphone/iphone-18-pro" target="_blank" rel="noopener">
+          <svg width="20" height="24" viewBox="0 0 17 21" fill="currentColor" aria-hidden="true"><path d="M14.1 11.2c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9s-1.9-.9-3.1-.8c-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.5.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.1.8c1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.5-1-2.6-3.9zM11.8 3.9c.7-.8 1.1-1.9 1-3-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.5z"/></svg>
+          <span class="slabel"><b>Buy at Apple</b><span id="appleSub">iPhone 18 Pro Max · from $1,299</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="store" id="amzLink" href="#" target="_blank" rel="sponsored noopener">
+          <svg width="22" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.7 12.6c0 1-.1 1.9-.6 2.7-.4.7-1 1.1-1.7 1.1-1 0-1.5-.7-1.5-1.8 0-2.2 1.9-2.6 3.8-2.6v.6zm2.7 6.4c-.2.2-.4.2-.7.1-1-.8-1.1-1.2-1.7-2-1.6 1.6-2.7 2.1-4.7 2.1-2.4 0-4.3-1.5-4.3-4.4 0-2.3 1.2-3.9 3-4.6 1.5-.7 3.7-.8 5.4-1v-.4c0-.6.1-1.4-.3-2-.3-.5-1-.7-1.6-.7-1.1 0-2 .5-2.3 1.7-.1.3-.2.5-.5.6l-2.8-.3c-.2-.1-.5-.3-.4-.6C7 3.2 9.9 2.3 12.5 2.3c1.3 0 3.1.4 4.1 1.4 1.3 1.3 1.2 3 1.2 4.8v4.4c0 1.3.5 1.9 1 2.6.2.3.2.6 0 .7-.6.5-1.6 1.3-2.1 1.8zM21.8 19.4c-2.7 2-6.6 3.1-10 3.1-4.7 0-8.9-1.7-12.1-4.6-.3-.2 0-.6.3-.4 3.5 2 7.7 3.2 12.1 3.2 3 0 6.3-.6 9.3-1.9.5-.2.9.3.4.6zm1.1-1.3c-.3-.4-2.3-.2-3.2-.1-.3 0-.3-.2-.1-.4 1.6-1.1 4.2-.8 4.5-.4.3.4-.1 3-1.6 4.2-.2.2-.4.1-.4-.2.4-.9 1.1-2.8.8-3.1z"/></svg>
+          <span class="slabel"><b>Check price on Amazon</b><span>Often below MSRP · unlocked</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="disclosure">As an Amazon Associate we earn from qualifying purchases. Apple links are unaffiliated. Prices and availability are set by the retailer.</p>
+    </div>
+
+    <div class="actions reveal" style="animation-delay:.5s">
+      <button class="act primary" id="shareBtn">Share this glow-up</button>
+      <button class="act ghost" id="copyBtn">Copy link</button>
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="toast">Link copied</div>
+
+<footer>
+  Not affiliated with Apple. Specs for iPhone 18 Pro Max from the September 2026 comparison; earlier models use Apple's published Pro Max specs. Your mileage — and your battery health — will vary.
+</footer>
+
+<script>
+/* ---------------------------------------------------------------
+   Amazon Associates tag. Set this to your own tracking ID (e.g.
+   "pricesearchr-20") to earn commission. Left empty the links still
+   work — they just don't attribute the sale to anyone.
+   --------------------------------------------------------------- */
+const AMAZON_TAG = "amznbargain-20";
+const APPLE_URL  = "https://www.apple.com/shop/buy-iphone/iphone-18-pro";
+
+function amazonUrl(query){
+  const u = new URL("https://www.amazon.com/s");
+  u.searchParams.set("k", query);
+  if (AMAZON_TAG) u.searchParams.set("tag", AMAZON_TAG);
+  return u.toString();
+}
+
+/* Pro Max figures per generation. battery = hours of video playback. */
+const PHONES = {
+  12:{name:"iPhone 12 Pro Max",yr:"2020",batt:20,zoom:2.5,ap:"ƒ/2.2",score:97,
+      tag:"Upgrade. Immediately.",
+      line:"Six years is a long time to carry the same phone. Almost everything here is a generational leap.",
+      deltas:[["+25 hrs","more video playback"],["8× zoom","yours reaches 2.5×"],["A20 Pro · 2nm","six chip generations"],["3000 nits","yours peaks at 1200"]]},
+  13:{name:"iPhone 13 Pro Max",yr:"2021",batt:28,zoom:3,ap:"ƒ/1.5",score:90,
+      tag:"Yes — it's time.",
+      line:"Your 13 still looks the part. The battery, the screen and the cameras have all moved on.",
+      deltas:[["+17 hrs","more video playback"],["48MP ×3","every rear camera, not just one"],["3000 nits","yours peaks at 1200"],["60W charging","50% in 15 minutes"]]},
+  14:{name:"iPhone 14 Pro Max",yr:"2022",batt:29,zoom:3,ap:"ƒ/1.78",score:84,
+      tag:"Worth it.",
+      line:"The 14 Pro Max was a classic. Four years on, it has earned its retirement.",
+      deltas:[["+16 hrs","29h → 45h video"],["Variable aperture","a first for iPhone"],["8× zoom","up from 3×"],["USB-C","goodbye Lightning"]]},
+  15:{name:"iPhone 15 Pro Max",yr:"2023",batt:29,zoom:5,ap:"ƒ/1.78",score:72,
+      tag:"A strong yes — if you shoot photos.",
+      line:"Still a great phone. The camera system and the battery are where it now falls behind.",
+      deltas:[["+16 hrs","29h → 45h video"],["ƒ/1.48–4.0","yours is fixed at ƒ/1.78"],["8× zoom","up from 5×"],["60W charging","50% in 15 minutes"]]},
+  16:{name:"iPhone 16 Pro Max",yr:"2024",batt:33,zoom:5,ap:"ƒ/1.78",score:55,
+      tag:"Only if you want the camera.",
+      line:"Two years on, the gap is real but no longer dramatic. The variable aperture is the reason to move.",
+      deltas:[["+12 hrs","33h → 45h video"],["Variable aperture","the headline change"],["12GB RAM","up from 8GB"],["Vapor chamber","no more thermal throttling"]]},
+  17:{name:"iPhone 17 Pro Max",yr:"2025",batt:39,zoom:8,ap:"ƒ/1.78",score:28,
+      tag:"Keep the one you have.",
+      line:"Last year's phone is still excellent. Unless the variable aperture is your whole job, sit this one out.",
+      deltas:[["+6 hrs","39h → 45h video"],["Variable aperture","the one real upgrade"],["Same 8× zoom","no change in reach"],["+$100","and 16g heavier"]]}
+};
+const MAX_BATT = 45, MAX_ZOOM = 8;
+
+/* ---- build chips ---- */
+const chips = document.getElementById('chips');
+Object.entries(PHONES).forEach(([k,p])=>{
+  const b=document.createElement('button');
+  b.className='chip';b.type='button';b.dataset.k=k;b.setAttribute('aria-pressed','false');
+  b.innerHTML=`<span class="glyph" aria-hidden="true"></span><span class="num">${k}</span><span class="yr">${p.yr}</span>`;
+  b.setAttribute('aria-label',`${p.name}, ${p.yr}`);
+  b.addEventListener('click',()=>select(k));
+  chips.appendChild(b);
+});
+
+/* ---- aperture blades ---- */
+const bladesG=document.getElementById('blades');
+for(let i=0;i<8;i++){
+  const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+  path.setAttribute('class','blade');
+  path.setAttribute('d','M60,60 L60,8 A52,52 0 0,1 96.8,23.2 Z');
+  path.style.transform=`rotate(${i*45}deg)`;
+  bladesG.appendChild(path);
+}
+
+const $=id=>document.getElementById(id);
+const result=$('result');
+let current=null;
+
+function animateNumber(el,to,suffix){
+  const dur=900,t0=performance.now();
+  (function step(t){
+    const k=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-k,3);
+    el.innerHTML=Math.round(to*e)+(suffix||'');
+    if(k<1)requestAnimationFrame(step);
+  })(t0);
+}
+
+function select(k){
+  const p=PHONES[k]; if(!p) return;
+  current=k;
+  [...chips.children].forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.k===k)));
+
+  result.hidden=false;
+  // restart the staggered reveal
+  result.querySelectorAll('.reveal').forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation='';});
+
+  const color = p.score>=70?'var(--go)':p.score>=45?'var(--mid)':'var(--hold)';
+  result.querySelector('.card').style.setProperty('--vc',color);
+  $('vtag').textContent=p.tag;
+  $('vline').textContent=p.line;
+
+  const C=2*Math.PI*45;
+  const ring=$('ringBar');
+  ring.style.strokeDasharray=C;
+  ring.style.strokeDashoffset=C;
+  requestAnimationFrame(()=>{ring.style.strokeDashoffset=C*(1-p.score/100);});
+  animateNumber($('ringNum'),p.score,'');
+
+  animateNumber($('battVal'),45,'<small>hrs</small>');
+  const bn=$('battNow'), b18=$('batt18');
+  bn.style.width='0';b18.style.width='0';
+  requestAnimationFrame(()=>{bn.style.width=(p.batt/MAX_BATT*100)+'%';b18.style.width='100%';});
+  $('battLblNow').textContent=`${p.name} · ${p.batt}h`;
+
+  $('zoomVal').textContent=`${p.zoom}×`;
+  $('zNowLbl').textContent=`${p.zoom}× · your phone`;
+  $('zNow').style.setProperty('--z','0');
+  $('z18').style.setProperty('--z','0');
+  requestAnimationFrame(()=>{
+    $('zNow').style.setProperty('--z',(p.zoom/MAX_ZOOM*2.2).toFixed(2));
+    $('z18').style.setProperty('--z','2.2');
+  });
+
+  $('apNow').textContent=p.ap;
+  [...bladesG.children].forEach((b,i)=>{b.style.transform=`rotate(${i*45}deg)`;});
+  setTimeout(()=>{[...bladesG.children].forEach((b,i)=>{b.style.transform=`rotate(${i*45+34}deg)`;});},420);
+
+  $('appleLink').href = APPLE_URL;
+  $('amzLink').href   = amazonUrl("iPhone 18 Pro Max");
+  $('buyhead').textContent =
+    p.score>=70 ? "Ready to upgrade?" :
+    p.score>=45 ? "If the camera sold you" :
+                  "Still want one anyway?";
+
+  $('deltas').innerHTML=p.deltas.map(([big,small])=>
+    `<div class="delta"><strong>${big}</strong><span>${small}</span></div>`).join('');
+
+  history.replaceState(null,'',`#${k}`);
+  if(window.innerWidth<760) result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function shareText(){
+  const p=PHONES[current];
+  return `My ${p.name} vs the iPhone 18 Pro Max: ${p.score}/100 reason to upgrade. "${p.tag}"`;
+}
+function toast(msg){
+  const t=$('toast');t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2000);
+}
+$('shareBtn').addEventListener('click',async()=>{
+  if(!current)return;
+  const data={title:'Should you upgrade?',text:shareText(),url:location.href};
+  if(navigator.share){ try{ await navigator.share(data); return; }catch(e){ if(e.name==='AbortError')return; } }
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText())}&url=${encodeURIComponent(location.href)}`,'_blank','noopener');
+});
+$('copyBtn').addEventListener('click',async()=>{
+  try{ await navigator.clipboard.writeText(location.href); toast('Link copied'); }
+  catch(e){ toast('Copy failed — use your browser menu'); }
+});
+
+/* deep link: /#15 */
+const h=location.hash.replace('#','');
+if(PHONES[h]) select(h);
+</script>
+</body>
+</html>
