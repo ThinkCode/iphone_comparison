@@ -3,6 +3,22 @@
 A single-page, zero-dependency web toy: pick the iPhone in your pocket, get a
 straight answer on whether the iPhone 18 Pro Max is worth it.
 
+## Layout
+
+The result is designed to land on a **single screen** — no scrolling on desktop
+or iPad in either orientation. A top bar holds the picker, a wide verdict panel
+sits above a four-tile metric grid, and the store links anchor the bottom. Below
+900px wide (or on short viewports) it relaxes into a normal scrolling column.
+
+## Artwork
+
+The phones are **original CSS/SVG renderings**, not Apple product photography —
+each generation in its signature colourway (Pacific Blue, Sierra Blue, Deep
+Purple, Natural and Desert Titanium, Cosmic Orange, Burgundy). Apple's product
+images are copyrighted and their use is not permitted here; the licensed route
+for real product shots is Amazon's Product Advertising API, which requires
+approved Associates credentials.
+
 ## What it does
 
 - **Verdict score (0–100)** in an animated SVG ring, colour-coded green → amber → red.
