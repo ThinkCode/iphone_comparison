@@ -3,6 +3,21 @@
 A single-page, zero-dependency web toy: pick the iPhone in your pocket, get a
 straight answer on whether the iPhone 18 Pro Max is worth it.
 
+## Two upgrade targets
+
+A segmented control in the top bar switches the comparison between the
+**iPhone 18 Pro Max** ($1,299) and the **iPhone Duo** ($1,999), Apple's first
+foldable. Each pairing of current phone and target carries its own score,
+verdict and supporting facts, and the metric tiles change with the target —
+the aperture tile becomes an unfolded-screen tile for the Duo.
+
+The Duo comparison reports regressions honestly: it reaches 2x optical where
+recent Pro Max models reach 5x or 8x, and 31h video unfolded against the 18 Pro
+Max's 45h. Those show in warning colour rather than being omitted.
+
+Deep links carry the target: `#15` opens the 18 Pro Max verdict for an iPhone
+15 Pro Max, `#15/duo` opens the Duo verdict.
+
 ## Layout
 
 The result is designed to land on a **single screen** — no scrolling on desktop
@@ -55,4 +70,15 @@ Open `index.html`. That's it — no build, no dependencies, no network calls.
 ## Data
 
 iPhone 18 Pro Max figures come from the September 2026 spec comparison. Earlier
-generations use Apple's published Pro Max specs. Not affiliated with Apple.
+generations use Apple's published Pro Max specs.
+
+iPhone Duo figures come from Apple's announcement (September 2026): 7.6in inner
+and 5.4in outer Super Retina XDR at 3000 nits, A20 Pro, 48MP Fusion main and
+ultra wide, 2x optical-quality zoom, 31h video unfolded / 44h on the cover
+screen, 50% charge in ~20 minutes, Grade 5 titanium, IP68, eSIM only, 256GB-2TB,
+Star White and Night Sky, from $1,999, released 23 October 2026.
+
+Apple quotes no f-number for the Duo's main camera and lists aperture as not
+applicable, so the page does not claim one.
+
+Not affiliated with Apple.
