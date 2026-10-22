@@ -100,6 +100,9 @@ body{
 .foldwrap svg{width:clamp(80px,9vw,132px);height:auto;max-height:100%}
 .fleaf{transform-origin:60px 50px;transition:transform 1.1s cubic-bezier(.2,.8,.25,1)}
 .warn{color:var(--hold)}
+.phone.base .plateau i:nth-child(2){visibility:hidden}
+.seg.sm button{padding:6px 11px;font-size:.78rem}
+.pick{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .batt{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:.84rem;color:var(--dim)}
 .tog{position:relative;width:38px;height:22px;border-radius:99px;border:none;background:rgba(255,255,255,.14);cursor:pointer;flex:0 0 auto;transition:background .25s}
 .tog::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .25s cubic-bezier(.2,.8,.25,1)}
@@ -277,7 +280,13 @@ button.act:active{transform:scale(.97)}
       <button type="button" id="tgtPro" aria-pressed="true">18 Pro Max</button>
       <button type="button" id="tgtDuo" aria-pressed="false">Duo<span class="new">new</span></button>
     </div>
-    <div class="chips" role="group" aria-label="Your current iPhone" id="chips"></div>
+    <div class="pick">
+      <div class="seg sm" role="group" aria-label="Your phone's line">
+        <button type="button" id="lineMax" aria-pressed="true">Pro Max</button>
+        <button type="button" id="lineStd" aria-pressed="false">iPhone</button>
+      </div>
+      <div class="chips" role="group" aria-label="Your current iPhone" id="chips"></div>
+    </div>
   </div>
 
   <!-- empty state -->
@@ -411,6 +420,49 @@ function amazonUrl(q){
 
 /* Pro Max specs. c1/c2 = that generation's signature colourway. */
 const PHONES={
+  b12:{name:"iPhone 12",yr:"2020",batt:17,zoom:1,ap:"ƒ/1.6",c1:"#2e4f73",c2:"#1b3150",
+      pro:{score:96,tag:"Upgrade. It's overdue.",
+        line:"Six years on a base iPhone 12 means a 60Hz screen, no telephoto and 17 hours of video. The 18 Pro Max adds 8× zoom, ProMotion and 28 more hours.",
+        also:[["8× telephoto","your phone has none"],["ProMotion 120Hz","yours is 60Hz"],["USB-C · 60W","50% in 15 minutes"]]},
+      duo:{score:82,tag:"Yes — and you lose nothing.",
+        line:"With no telephoto today, the Duo's 2× is a gain, not a loss. Every number goes up; the only question is the $1,999.",
+        also:[["7.6in folding display","plus a 5.4in cover screen"],["2× optical-quality","up from 1×"],["Touch ID returns","in the side button — no Face ID"]]}},
+  b13:{name:"iPhone 13",yr:"2021",batt:19,zoom:1,ap:"ƒ/1.6",c1:"#e9c4c9",c2:"#c3949d",
+      pro:{score:92,tag:"Yes — it's time.",
+        line:"Your 13 has no telephoto, a 60Hz screen and 19 hours of video. The 18 Pro Max more than doubles the battery and adds 8× reach.",
+        also:[["8× telephoto","yours has none"],["ProMotion 120Hz","yours is 60Hz"],["USB-C","goodbye Lightning"]]},
+      duo:{score:78,tag:"A real leap, at a real price.",
+        line:"Coming from a 13, the Duo is better at everything, zoom included. You are paying for a foldable and getting a full upgrade with it.",
+        also:[["7.6in folding display","plus a 5.4in cover screen"],["2× optical-quality","up from 1×"],["Touch ID returns","in the side button — no Face ID"]]}},
+  b14:{name:"iPhone 14",yr:"2022",batt:20,zoom:1,ap:"ƒ/1.5",c1:"#b9a9cf",c2:"#8a7ba6",
+      pro:{score:88,tag:"Worth it.",
+        line:"The 14 never had a telephoto or ProMotion. The 18 Pro Max adds both, plus 25 more hours of video.",
+        also:[["8× telephoto","yours has none"],["ProMotion 120Hz","yours is 60Hz"],["USB-C","goodbye Lightning"]]},
+      duo:{score:70,tag:"Strong — if $1,999 is fine.",
+        line:"The Duo beats your 14 on screen, zoom and battery. Against the 18 Pro Max it costs $700 more for less zoom, so buy it for the fold.",
+        also:[["7.6in folding display","plus a 5.4in cover screen"],["2× optical-quality","up from 1×"],["Touch ID returns","in the side button — no Face ID"]]}},
+  b15:{name:"iPhone 15",yr:"2023",batt:20,zoom:2,ap:"ƒ/1.6",c1:"#a9bccd",c2:"#7d93a8",
+      pro:{score:80,tag:"A strong yes.",
+        line:"Your 15 reaches 2×. The 18 Pro Max takes that to 8× and adds ProMotion and 25 more hours of video.",
+        also:[["8× telephoto","up from 2×"],["ProMotion 120Hz","yours is 60Hz"],["Fast USB-C","yours runs at USB 2 speed"]]},
+      duo:{score:62,tag:"Only for the fold.",
+        line:"The Duo matches your 2× zoom and adds 11 hours unfolded. The gain is the screen; the cost is $1,999.",
+        also:[["7.6in folding display","plus a 5.4in cover screen"],["Grade 5 titanium","mirror-polished, IP68"],["Touch ID returns","in the side button — no Face ID"]]}},
+  b16:{name:"iPhone 16",yr:"2024",batt:22,zoom:2,ap:"ƒ/1.6",c1:"#4a5fd0",c2:"#2e3c96",
+      pro:{score:68,tag:"Only for the camera.",
+        line:"Your 16 is still quick and has Camera Control. The reasons to move are 8× zoom, ProMotion and 23 more hours of video.",
+        also:[["8× telephoto","up from 2×"],["ProMotion 120Hz","yours is 60Hz"],["Variable aperture","yours is fixed ƒ/1.6"]]},
+      duo:{score:54,tag:"A want, not a need.",
+        line:"Same 2× reach, 9 more hours unfolded and a far bigger screen. Nothing on your 16 needs fixing.",
+        also:[["7.6in folding display","plus a 5.4in cover screen"],["Grade 5 titanium","mirror-polished, IP68"],["Touch ID returns","in the side button — no Face ID"]]}},
+  b17:{name:"iPhone 17",yr:"2025",batt:30,zoom:2,ap:"ƒ/1.6",c1:"#a9b7a0",c2:"#7c8c73",
+      pro:{score:44,tag:"Probably keep it.",
+        line:"Your 17 already has ProMotion and 30 hours of video. The 18 Pro Max adds 8× zoom and a variable aperture — worth it only if you shoot a lot.",
+        also:[["8× telephoto","up from 2×"],["Variable aperture","yours is fixed ƒ/1.6"],["+15h video","30h → 45h"]]},
+      duo:{score:36,tag:"Keep the one you have.",
+        line:"Your 17 plays 30 hours of video; the Duo plays 31 unfolded, for $1,999. Buy it only because you want a foldable.",
+        also:[["7.6in folding display","plus a 5.4in cover screen"],["Grade 5 titanium","mirror-polished, IP68"],["Touch ID returns","in the side button — no Face ID"]]}},
+
   12:{name:"iPhone 12 Pro Max",yr:"2020",batt:20,zoom:2.5,ap:"ƒ/2.2",c1:"#3d5a70",c2:"#1e3243",
       pro:{score:97,tag:"Upgrade. Immediately.",
         line:"Six years is a long time to carry the same phone. Nearly everything here is a generational leap, not an increment.",
@@ -474,7 +526,7 @@ let target="pro";
 let weakBatt=false;
 const SERVICE="https://support.apple.com/iphone/repair/battery-replacement";
 function battAdvice(k){
-  k=Number(k);
+  k=parseInt(String(k).replace('b',''),10);
   if(k>=16) return `Try a <a href="${SERVICE}" target="_blank" rel="noopener">battery replacement</a> first. Your phone is recent, and a new battery closes most of the gap for a fraction of the price.`;
   if(k>=14) return `A <a href="${SERVICE}" target="_blank" rel="noopener">battery replacement</a> buys a year or two, but the camera and screen gap stays. Upgrade if you can, replace if you can't.`;
   return `A new battery won't fix the rest. At this age the chip, camera and screen are all behind. Upgrade.`;
@@ -488,15 +540,31 @@ function phoneHTML(c1,c2,cls){
 }
 
 /* chips */
-Object.entries(PHONES).forEach(([k,p])=>{
-  const b=document.createElement('button');
-  b.className='chip';b.type='button';b.dataset.k=k;
-  b.setAttribute('aria-pressed','false');
-  b.setAttribute('aria-label',`${p.name}, ${p.yr}`);
-  b.innerHTML=phoneHTML(p.c1,p.c2,k>=17?'bar':'')+`<em>${k}</em>`;
-  b.addEventListener('click',()=>select(k));
-  chips.appendChild(b);
-});
+let line="max";
+const isBase=k=>String(k).startsWith('b');
+const gen=k=>parseInt(String(k).replace('b',''),10);
+const looks=k=>isBase(k)?'base':(gen(k)>=17?'bar':'');
+function buildChips(){
+  chips.innerHTML='';
+  Object.entries(PHONES).filter(([k])=>isBase(k)===(line==='std')).forEach(([k,p])=>{
+    const b=document.createElement('button');
+    b.className='chip';b.type='button';b.dataset.k=k;
+    b.setAttribute('aria-pressed',String(k===current));
+    b.setAttribute('aria-label',`${p.name}, ${p.yr}`);
+    b.innerHTML=phoneHTML(p.c1,p.c2,looks(k))+`<em>${gen(k)}</em>`;
+    b.addEventListener('click',()=>select(k));
+    chips.appendChild(b);
+  });
+  $('lineMax').setAttribute('aria-pressed',String(line==='max'));
+  $('lineStd').setAttribute('aria-pressed',String(line==='std'));
+}
+function setLine(l){
+  if(l===line)return;
+  line=l;buildChips();
+  if(current) select((l==='std'?'b':'')+gen(current));
+}
+$('lineMax').addEventListener('click',()=>setLine('max'));
+$('lineStd').addEventListener('click',()=>setLine('std'));
 
 /* hero fan: every generation + the 18 */
 $('fan').innerHTML=Object.values(PHONES).map(p=>phoneHTML(p.c1,p.c2,'')).join('')
@@ -544,7 +612,8 @@ function render(){
 
   const oldP=$('vPhoneOld');
   oldP.style.setProperty('--c1',p.c1);oldP.style.setProperty('--c2',p.c2);
-  oldP.classList.toggle('bar',Number(current)>=17);
+  oldP.classList.toggle('bar',looks(current)==='bar');
+  oldP.classList.toggle('base',looks(current)==='base');
 
   const newP=$('vPhoneNew');
   newP.style.setProperty('--c1',T.c1);newP.style.setProperty('--c2',T.c2);
@@ -575,7 +644,7 @@ function render(){
     $('zOld').style.setProperty('--z',(p.zoom/MAX_Z*2.1).toFixed(2));
     $('zNew').style.setProperty('--z',(T.zoom/MAX_Z*2.1).toFixed(2));
   });
-  $('zSub').innerHTML = T.zoom>p.zoom ? `<b>From ${p.zoom}×</b> <span>on your Pro Max</span>`
+  $('zSub').innerHTML = T.zoom>p.zoom ? `<b>From ${p.zoom}×</b> <span>on your ${isBase(current)?'iPhone':'Pro Max'}</span>`
                       : T.zoom===p.zoom ? `<b>No change</b> <span>— yours already reaches ${p.zoom}×</span>`
                       : `<b class="warn">Down from ${p.zoom}×</b> <span>— you lose reach</span>`;
 
@@ -639,9 +708,10 @@ $('copyBtn').addEventListener('click',async()=>{
   catch(e){toast('Copy failed — use your browser menu');}
 });
 
+buildChips();
 const [hk,ht]=location.hash.replace('#','').split('/');
 if(ht==='duo')target='duo';
-if(PHONES[hk])select(hk); else setTarget(target);
+if(PHONES[hk]){ if(isBase(hk)){line='std';buildChips();} select(hk);} else setTarget(target);
 </script>
 </body>
 </html>
