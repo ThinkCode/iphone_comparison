@@ -1,7 +1,10 @@
-# Should I Upgrade? — iPhone 18 Pro Max
+# Should I Upgrade? — iPhone 18 Pro Max vs iPhone Duo
 
 A single-page, zero-dependency web toy: pick the iPhone in your pocket, get a
-straight answer on whether the iPhone 18 Pro Max is worth it.
+straight answer on whether the iPhone 18 Pro Max or the foldable iPhone Duo is
+worth it.
+
+Live at **https://iphonecomparison.pricesearchr.com**
 
 ## Two upgrade targets
 
@@ -15,8 +18,26 @@ The Duo comparison reports regressions honestly: it reaches 2x optical where
 recent Pro Max models reach 5x or 8x, and 31h video unfolded against the 18 Pro
 Max's 45h. Those show in warning colour rather than being omitted.
 
-Deep links carry the target: `#15` opens the 18 Pro Max verdict for an iPhone
-15 Pro Max, `#15/duo` opens the Duo verdict.
+## Your phone: Pro Max or standard
+
+A second switch beside the picker chooses the line of the phone you own: the
+**Pro Max** (12–17 Pro Max) or the standard **iPhone** (12–17). Switching keeps
+the same generation. Each phone has its own verdict for both targets, 24 in
+all. Standard models with no telephoto (12–14) gain reach on the Duo rather
+than losing it, and the verdicts say so.
+
+## Battery health
+
+A toggle under the verdict, "My battery health is below 80%", adds advice by
+generation: try a battery replacement first (16, 17), a new battery is a
+stopgap (14, 15), or a new battery won't fix the rest (12, 13). It links to
+Apple's battery service page and quotes no repair price.
+
+## Deep links
+
+The hash carries phone and target: `#15` opens the 18 Pro Max verdict for an
+iPhone 15 Pro Max, `#15/duo` the Duo verdict, and a `b` prefix selects the
+standard model (`#b14`, `#b14/duo`).
 
 ## Layout
 
@@ -41,8 +62,9 @@ approved Associates credentials.
 - **Zoom visual** showing optical reach growing from yours to 8×.
 - **Animated aperture diagram** for the new variable ƒ/1.48–4.0 main camera.
 - **Four headline deltas** per model, plus native share / copy-link.
-
-Deep links work: `index.html#15` opens straight to the iPhone 15 Pro Max verdict.
+- **Ship date** for the Duo beside the store links.
+- **Share preview**: `og.png` (1200×630, rendered from the site's hero) is set
+  as `og:image` / `twitter:image`, so shared links show a card.
 
 ## Order links
 
@@ -71,6 +93,11 @@ Open `index.html`. That's it — no build, no dependencies, no network calls.
 
 iPhone 18 Pro Max figures come from the September 2026 spec comparison. Earlier
 generations use Apple's published Pro Max specs.
+
+Standard models use Apple's published figures — video playback: 12 17h,
+13 19h, 14 20h, 15 20h, 16 22h, 17 30h; optical reach 1× on the 12–14 and 2×
+optical-quality on the 15–17. The iPhone 17 was checked against
+apple.com/iphone-17/specs.
 
 iPhone Duo figures come from Apple's announcement (September 2026): 7.6in inner
 and 5.4in outer Super Retina XDR at 3000 nits, A20 Pro, 48MP Fusion main and
